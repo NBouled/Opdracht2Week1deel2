@@ -33,7 +33,7 @@ namespace Opdracht2Week1deel2
 
         }
 
-        public void Display()
+        public virtual void Display()
         {
             Console.WriteLine(Text);
         }
