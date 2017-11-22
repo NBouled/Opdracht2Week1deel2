@@ -4,16 +4,19 @@ using System.Text;
 
 namespace Opdracht2Week1deel2
 {
-    class Question
+   public class Question
     {
 
-        private String Text { get; set; }
-        private String Answer { get; set; }
+        public String Text { get; set; }
+        public String Answer { get; set; }
+        public int Lvl { get; set; }
+        public String Categorie { get; set; }
 
         public Question()
         {
             Text = "";
             Answer = "";
+            
         }
 
         public void SetQuestion(String text)

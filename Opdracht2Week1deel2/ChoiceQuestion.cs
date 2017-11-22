@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Opdracht2Week1deel2
 {
-    class ChoiceQuestion : Question
+   public class ChoiceQuestion : Question
     {
 
-        private List<String> choices;
+        public List<String> choices;
 
         public ChoiceQuestion()
         {
