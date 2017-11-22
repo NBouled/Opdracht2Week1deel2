@@ -23,7 +23,36 @@ namespace Opdracht2Week1deel2
             int LvlG = 0;
             String categorie = "";
 
-            Console.WriteLine("Welkom. ")
+            Console.WriteLine("Welkom bij de QuizApp! ");
+            Console.WriteLine("Kies uit Lvl (Type L)" + "of \n" + "Kies uit Catergorie (Type  C)");
+            string keuze = Console.ReadLine();
+            if (keuze.Equals("L"))
+            {
+                Console.WriteLine("Kies Lvl (1, 2, 3)");
+                string LvlGraadString = Console.ReadLine();
+                Int32.TryParse(LvlGraadString, out LvlG);
+            }
+            else if (keuze.Equals("C"))
+            {
+                Console.WriteLine("Kies Catergorie(Topografie, Islam)");
+                categorie = Console.ReadLine();
+            }
+
+            int count = 0;
+
+            OrderendQ.Where(x => x.Lvl == LvlG || x.Categorie.Equals(categorie)).ToList().ForEach(x =>
+            {
+                count++;
+                Console.Write("vraag " + count + ": ");
+                x.Display();
+                Console.Write("Uw antwoord: ");
+                string antw = Console.ReadLine();
+                Console.WriteLine(x.CheckAnswer(antw));
+            }
+
+           );
+            Console.WriteLine("Einde");
+            Console.ReadKey();
 
         }
     }
